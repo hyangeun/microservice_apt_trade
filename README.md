@@ -5,7 +5,7 @@ Cloudfoundry CLI를 통해 해당 마이크로서비스 샘플앱을 배포할 �
 ## Table of Contents
 1. [서비스 소개](#Introduction)
 2. [서비스 설계](#Architecture) 
-3. [프론트엔드 API 문서 제공](#프론트엔드 API 문서 제공)
+3. [프론트엔드 API 문서 제공](#프론트엔드-api-문서-제공)
 3. [배포 전 준비사항](#Preparations)
 4. [앱 배포](#Application-Deploy)
 5. [MsXpert Nipa 활용](#MsXpert-Studio-접속)
