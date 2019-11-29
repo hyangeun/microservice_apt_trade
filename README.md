@@ -64,22 +64,22 @@ Cloudfoundry CLI를 통해 해당 마이크로서비스 샘플앱을 배포할 �
 2.  CF CLI를 통해 조직 및 영역을 생성합니다. [PaaS-TA 포털을 활용중일 경우 포털을 통해 조직 및 영역을 생성할 수 있습니다.] 
     PaaS-TA 포털에 배포할 조직 및 영역과 MsXpert Studio에 배포할 조직 및 영역을 각각 생성합니다.
 
-  ````
-  $ cf create-org user1-paasta
-  $ cf create-space -o user1-paasta -s trade-paasta-space
-  $ cf create-org user1-msa
-  $ cf create-space -o user1-msa -s trade-msa-space
-  ```` 
+      ````
+      $ cf create-org user1-paasta
+      $ cf create-space -o user1-paasta -s trade-paasta-space
+      $ cf create-org user1-msa
+      $ cf create-space -o user1-msa -s trade-msa-space
+      ```` 
   
 
 3. MsXpert Studio에서 user1-msa	조직에 앱을 copy하여 배포하기위해 user1-paasta 조직에 위 샘플앱(frontend, backend) 을  CF CLI을 통해 push합니다.
 
-  ````
-  $ cd aptTrade-frontend
-  $ cf push --no-start ##manifest가 존재하는지 확인 
-  $ cd ../aptTrade-service
-  $ cf push --no-start
-  ````
+    ````
+    $ cd aptTrade-frontend
+    $ cf push --no-start ##manifest가 존재하는지 확인 
+    $ cd ../aptTrade-service
+    $ cf push --no-start
+    ````
 
 ## MsXpert Studio 접속
 
