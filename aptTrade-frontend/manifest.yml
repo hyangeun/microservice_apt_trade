@@ -5,5 +5,5 @@ applications:
     memory: 1G
     buildpack: java_buildpack
     env:
-#     msa: yes
-#     private: heunji
+      msa: yes
+      private:
