@@ -31,15 +31,13 @@ Cloudfoundry CLI를 통해 해당 마이크로서비스 샘플앱을 배포할 �
 
 ## Preparations
 
-1. **OpenDataMarket 홈페이지 활용**
-  1.1. 홈페이지 내  OpenData 메뉴에서 **아파트매매 실거래 상세 자료** API를 활용 신청합니다.
+1. **[OpenDataMarket 홈페이지](#http://182.252.131.40:3000)** 내  OpenData 메뉴에서 **아파트매매 실거래 상세 자료** API를 활용 신청합니다.
   ![opendata01](./images/opendata01.png)
    
-  1.2. 마이페이지에서 **나의 인증키**를 복사합니다.
+2. 마이페이지에서 **나의 인증키**를 복사합니다.
   ![opendata02](./images/opendata02.png)
 
-2. **소스코드 수정**
-   2.1. aptTrade-service/src/main/resources/application.properties 수정
+3. aptTrade-service/src/main/resources/application.properties 수정
   
    ````
    #공공데이터 포털 주소 API
@@ -47,8 +45,8 @@ Cloudfoundry CLI를 통해 해당 마이크로서비스 샘플앱을 배포할 �
    opendata.api.key: ##여기에 키 입력
    ````
       
-3. CF 또는 [PaaS-TA](#http://paas-ta.kr) 설치
-4. CF  CLI 설치 
+4. CF 또는 [PaaS-TA](#http://paas-ta.kr) 설치
+5. CF  CLI 설치 
        
 
 
