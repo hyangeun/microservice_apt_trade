@@ -5,10 +5,10 @@ Cloudfoundry CLI를 통해 해당 마이크로서비스 샘플앱을 배포할 �
 ## Table of Contents
 1. [서비스 소개](#Introduction)
 2. [서비스 설계](#Architecture) 
-3. [ Frontend 앱 API ](#Rest API Docs)
+3. [Frontend 앱 API ](#Rest-API-Docs)
 3. [배포 전 준비사항](#Preparations)
 4. [앱 배포](#deploy)
-5. [MsXpert Nipa 활용](#)
+5. [MsXpert Nipa 활용](#msxpert)
 
 
 ## Introduction
@@ -21,7 +21,7 @@ Cloudfoundry CLI를 통해 해당 마이크로서비스 샘플앱을 배포할 �
 
 ![img02](./images/architecture.png)
 
-## 프론트엔드 API 문서 제공
+## [프론트엔드 API 문서 제공](#Rest-API-Docs)
 이 서비스는 MsXpert Studio를 이용하여 배포된 마이크로서비스의 Frontend 애플리케이션 API 문서를 조회할 수 있습니다.
 - /api/trade/condition/list : 당해연도 및 분기, 행정구역, 조건 등에 해당하는 아파트 실거래가 대비 공시지가 비율 데이터를 반환합니다.
 - /api/trade/list/{rnMgtSn} : 당해연도 및 분기, 아파트 키워드 조건에 해당하는 실거래가 대비 공시지가 비율 데이터를 반환합니다.
@@ -87,7 +87,7 @@ opendata.api.key: ##여기에 키 입력
   $ cf push --no-start
   ````
 
-4. MsXpert Studio 접속
+## [MsXpert Studio 접속](#msxpert]
 
   Paas-TA 계정을 가지고 MsXpert Studio에 접속하여  아래 이미지와 같이 user1-paasta 조직에 배포한 frontend, backend 앱을 마우스로 드래그하여 마이크로서비스를 설계할 수 있습니다.
   
