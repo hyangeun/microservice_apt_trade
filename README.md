@@ -31,7 +31,7 @@ Cloudfoundry CLI를 통해 해당 마이크로서비스 샘플앱을 배포할 �
 
 ## Preparations
 
-1. **[OpenDataMarket 홈페이지](#http://182.252.131.40:3000)** 내  OpenData 메뉴에서 **아파트매매 실거래 상세 자료** API를 활용 신청합니다.
+1. OpenDataMarket 홈페이지](#http://182.252.131.40:3000) 내 OpenData 메뉴에서 **아파트매매 실거래 상세 자료** API를 활용 신청합니다.
   ![opendata01](./images/opendata01.png)
    
 2. 마이페이지에서 **나의 인증키**를 복사합니다.
@@ -61,7 +61,8 @@ Cloudfoundry CLI를 통해 해당 마이크로서비스 샘플앱을 배포할 �
     ````
 
 
-2.  CF CLI를 통해 조직 및 영역을 생성합니다. [PaaS-TA 포털을 활용중일 경우 포털을 통해 조직 및 영역을 생성할 수 있습니다.] PaaS-TA 포털에 배포할 조직 및 영역과 MsXpert Studio에 배포할 조직 및 영역을 각각 생성합니다.
+2.  CF CLI를 통해 조직 및 영역을 생성합니다. [PaaS-TA 포털을 활용중일 경우 포털을 통해 조직 및 영역을 생성할 수 있습니다.] 
+    PaaS-TA 포털에 배포할 조직 및 영역과 MsXpert Studio에 배포할 조직 및 영역을 각각 생성합니다.
 
   ````
   $ cf create-org user1-paasta
@@ -84,6 +85,6 @@ Cloudfoundry CLI를 통해 해당 마이크로서비스 샘플앱을 배포할 �
 
 Paas-TA 계정을 가지고 MsXpert Studio에 접속하여  아래 이미지와 같이 user1-paasta 조직에 배포한 frontend, backend 앱을 마우스로 드래그하여 마이크로서비스를 설계할 수 있습니다.
   
-  ![img05](./images/img02.png)
+![img05](./images/img02.png)
 
     
