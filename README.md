@@ -2,7 +2,7 @@
 애플리케이션의 배포뿐만 아니라 다양한 내용의 학습을 위해 본 README 하단의 [워크샵](#workshops) 부분을 참고하실 수 있겠습니다.
 Cloudfoundry CLI를 통해 해당 마이크로서비스 샘플앱을 배포할 수 있습니다.
 
-##Table of Contents
+## Table of Contents
 1. [서비스 소개](#Introduction)
 2. [서비스 설계](#Architecture) 
 3. [ Frontend 앱 API ](#Rest API Docs)
@@ -11,17 +11,17 @@ Cloudfoundry CLI를 통해 해당 마이크로서비스 샘플앱을 배포할 �
 5. [MsXpert Nipa 활용](#)
 
 
-##Introduction
+## Introduction
 해당 마이크로서비스는  **주소 서비스** 및 **공동주택 가격정보 조회 서비스**  REST API를 통해 당해년도 분기별 실거래가 대비 공시지가 비율을 조회하는 서비스입니다.
 
 ![img01](./images/img01.png)
 
-##Architecture
+## Architecture
 해당 마이크로서비스는 Frontend, Gateway, Backend, Config Server, Registry 등 최소 5개의 앱으로 구성되어 있으며, 공동주택 가격정보 조회, 주소 조회 등의 마이크로서비스 Rest API를 요청하고 있습니다.  마이크로서비스 Studio를 사용한 앱 간의 관계는 다음과 같습니다.
 
 ![img02](./images/architecture.png)
 
-##프론트엔드 API 문서 제공
+## 프론트엔드 API 문서 제공
 이 서비스는 MsXpert Studio를 이용하여 배포된 마이크로서비스의 Frontend 애플리케이션 API 문서를 조회할 수 있습니다.
 - /api/trade/condition/list : 당해연도 및 분기, 행정구역, 조건 등에 해당하는 아파트 실거래가 대비 공시지가 비율 데이터를 반환합니다.
 - /api/trade/list/{rnMgtSn} : 당해연도 및 분기, 아파트 키워드 조건에 해당하는 실거래가 대비 공시지가 비율 데이터를 반환합니다.
@@ -29,7 +29,7 @@ Cloudfoundry CLI를 통해 해당 마이크로서비스 샘플앱을 배포할 �
 ![img03](./images/img03.png)
 
 
-##Preparations
+## Preparations
 1. **OpenDataMarket 홈페이지 활용**
 
   1.1. 홈페이지 내  OpenData 메뉴에서 **아파트매매 실거래 상세 자료** API를 활용 신청합니다.
@@ -53,7 +53,7 @@ opendata.api.key: ##여기에 키 입력
        
 
 
-##Application Deploy
+## Application Deploy
 1. aptTrade-frontend, aptTrade-service 각각 프로젝트를 빌드합니다.
 
 
