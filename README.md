@@ -33,20 +33,22 @@ Cloudfoundry CLI를 통해 해당 마이크로서비스 샘플앱을 배포할 �
 1. **OpenDataMarket 홈페이지 활용**
 
   1.1. 홈페이지 내  OpenData 메뉴에서 **아파트매매 실거래 상세 자료** API를 활용 신청합니다.
-     ![opendata01](./images/opendata01.png)
+  
+  ![opendata01](./images/opendata01.png)
    
-   1.2. 마이페이지에서 **나의 인증키**를 복사합니다.
-   
-     ![opendata02](./images/opendata02.png)
+  1.2. 마이페이지에서 **나의 인증키**를 복사합니다.
+  
+  ![opendata02](./images/opendata02.png)
 
 2. **소스코드 수정**
  
    2.1. aptTrade-service/src/main/resources/application.properties 수정
-       ````
-    #공공데이터 포털 주소 API
-opendata.api.apt.trade.uri: http://182.252.131.40:9000/apiservice/4357
-opendata.api.key: ##여기에 키 입력
-       ````
+  
+   ````
+   #공공데이터 포털 주소 API
+   opendata.api.apt.trade.uri: http://182.252.131.40:9000/apiservice/4357
+   opendata.api.key: ##여기에 키 입력
+   ````
        
 3. CF 또는 [PaaS-TA](#http://paas-ta.kr) 설치
 4. CF  CLI 설치 
@@ -56,8 +58,7 @@ opendata.api.key: ##여기에 키 입력
 ## Application Deploy
 1. aptTrade-frontend, aptTrade-service 각각 프로젝트를 빌드합니다.
 
-
-       ````
+    ````
     $ cd aptTrade-frontend 
     $ mvn clean package 
     $ cd ../aptTrade-service
@@ -69,12 +70,12 @@ opendata.api.key: ##여기에 키 입력
 
    PaaS-TA 포털에 배포할 조직 및 영역과 MsXpert Studio에 배포할 조직 및 영역을 각각 생성합니다.
 
-    ````
-     $ cf create-org user1-paasta
-     $ cf create-space -o user1-paasta -s trade-paasta-space
-     $ cf create-org user1-msa
-     $ cf create-space -o user1-msa -s trade-msa-space
-    ```` 
+  ````
+  $ cf create-org user1-paasta
+  $ cf create-space -o user1-paasta -s trade-paasta-space
+  $ cf create-org user1-msa
+  $ cf create-space -o user1-msa -s trade-msa-space
+  ```` 
   
 
 3.  MsXpert Studio에서 user1-msa	조직에 앱을 copy하여 배포하기위해 user1-paasta 조직에 위 샘플앱(frontend, backend) 을  CF CLI을 통해 push합니다.
