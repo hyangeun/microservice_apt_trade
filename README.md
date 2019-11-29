@@ -30,10 +30,7 @@ Cloudfoundry CLI를 통해 해당 마이크로서비스 샘플앱을 배포할 �
 
 
 ## Preparations
-1. First instruction
-   1. Sub-instruction
-   1. Sub-instruction
-1. Second instruction
+
 1. **OpenDataMarket 홈페이지 활용**
   1.1. 홈페이지 내  OpenData 메뉴에서 **아파트매매 실거래 상세 자료** API를 활용 신청합니다.
   ![opendata01](./images/opendata01.png)
