@@ -7,7 +7,7 @@ Cloudfoundry CLI를 통해 해당 마이크로서비스 샘플앱을 배포할 �
 2. [서비스 설계](#Architecture) 
 3. [ Frontend 앱 API ](#Rest API Docs)
 3. [배포 전 준비사항](#Preparations)
-4. [앱 배포](#Application Deploy)
+4. [앱 배포](#deploy)
 5. [MsXpert Nipa 활용](#)
 
 
@@ -53,7 +53,7 @@ opendata.api.key: ##여기에 키 입력
        
 
 
-## Application Deploy
+## [Application Deploy](#deploy)
 1. aptTrade-frontend, aptTrade-service 각각 프로젝트를 빌드합니다.
 
 
