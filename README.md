@@ -1,6 +1,5 @@
 ## 공동주택 실거래가 대비 공시지가 비율 조회 애플리케이션 배포
-애플리케이션의 배포뿐만 아니라 다양한 내용의 학습을 위해 본 README 하단의 [워크샵](#workshops) 부분을 참고하실 수 있겠습니다.
-Cloudfoundry CLI를 통해 해당 마이크로서비스 샘플앱을 배포할 수 있습니다.
+해당 샘플 앱은 MsXpert Studio를 활용을 목적으로 만들었으며 API Gateway, Eureka, Config Server 등을 직접 설정하지 않아도 Studio를 통해 네이티브 애플리케이션을 만들 수 있습니다. 또한, Cloudfoundry CLI를 통해 해당 마이크로서비스 샘플 앱을 배포할 수 있습니다.
 
 ## Table of Contents
 1. [서비스 소개](#Introduction)
@@ -9,7 +8,6 @@ Cloudfoundry CLI를 통해 해당 마이크로서비스 샘플앱을 배포할 �
 3. [배포 전 준비사항](#Preparations)
 4. [앱 배포](#Application-Deploy)
 5. [MsXpert Nipa 활용](#MsXpert-Studio-접속)
-
 
 ## Introduction
 해당 마이크로서비스는  **주소 서비스** 및 **공동주택 가격정보 조회 서비스**  REST API를 통해 당해년도 분기별 실거래가 대비 공시지가 비율을 조회하는 서비스입니다.

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0aa43379-fe9c-450b-bf38-c4a938825572" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/aptTrade-frontend/src/test/java/com/microservice/apt/trade/controller/AptTradeApiControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aptTrade-service/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aptTrade-service/src/main/resources/application-cloud.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aptTrade-service/src/main/resources/application-local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/manifest.yml" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-frontend/manifest.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/address/controller/AddressApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/address/controller/AddressApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/address/dto/AddressCommonData.java" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/address/dto/AddressCommonData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/aptList/dto/ApartmentListItemResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/aptList/dto/ApartmentListResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/aptList/service/ApartmentListService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/aptList/service/RequestService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/trade/controller/AptTradeApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/trade/controller/AptTradeApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/trade/dto/ApartmentTradeRatioBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/trade/dto/ApartmentTradeRatioBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/trade/dto/ApartmentTradeRatioHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/trade/dto/ApartmentTradeRatioHeader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/trade/dto/ApartmentTradeResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/trade/dto/ApartmentTradeResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/trade/dto/AptTradeConditionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/trade/dto/AptTradeConditionResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/trade/dto/DeclaredValueResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/trade/dto/DeclaredValueResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/trade/service/ApiServiceFallBack.java" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/trade/service/ApiServiceFallBack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/trade/service/AptTradeApiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/trade/service/AptTradeApiService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/trade/service/RequestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/trade/service/RequestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/util/DataException.java" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/util/DataException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/util/ErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/util/ErrorResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/util/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/util/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/util/Paging.java" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-frontend/src/main/java/com/microservice/apt/util/Paging.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/resources/application-cloud.properties" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-frontend/src/main/resources/application-cloud.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/resources/application-local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-frontend/src/main/resources/application-local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/resources/static/css/contents.css" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-frontend/src/main/resources/static/css/contents.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/resources/static/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-frontend/src/main/resources/static/css/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/resources/static/js/controllers/aptSearchControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-frontend/src/main/resources/static/js/controllers/aptSearchControllers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/resources/static/js/controllers/conditionSearchControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-frontend/src/main/resources/static/js/controllers/conditionSearchControllers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/resources/static/views/aptSearch/aptResult.html" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-frontend/src/main/resources/static/views/aptSearch/aptResult.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/resources/static/views/aptSearch/aptSearch.html" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-frontend/src/main/resources/static/views/aptSearch/aptSearch.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/resources/static/views/conditionSearch/conditionResult.html" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-frontend/src/main/resources/static/views/conditionSearch/conditionResult.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-frontend/src/main/resources/static/views/conditionSearch/conditionSearch.html" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-frontend/src/main/resources/static/views/conditionSearch/conditionSearch.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-service/manifest.yml" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-service/manifest.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-service/src/main/java/com/microservice/apttrade/api/service/AptTradeApiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-service/src/main/java/com/microservice/apttrade/api/service/AptTradeApiService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-service/src/main/java/com/microservice/apttrade/aptList/dto/ApartmentListItemResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-service/src/main/java/com/microservice/apttrade/aptList/dto/ApartmentListResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-service/src/main/java/com/microservice/apttrade/aptList/service/ApartmentListService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-service/src/main/java/com/microservice/apttrade/aptList/service/RequestService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-service/src/main/java/com/microservice/apttrade/util/DataException.java" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-service/src/main/java/com/microservice/apttrade/util/DataException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-service/src/main/java/com/microservice/apttrade/util/DataException2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-service/src/main/java/com/microservice/apttrade/util/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-service/src/main/java/com/microservice/apttrade/util/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aptTrade-service/src/main/resources/bootstrap.properties" beforeDir="false" afterPath="$PROJECT_DIR$/aptTrade-service/src/main/resources/bootstrap.properties" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1UHNLUxCCiSeHkQb64IpPlyEhXR" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0aa43379-fe9c-450b-bf38-c4a938825572" name="Default Changelist" comment="" />
+      <created>1575009504529</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575009504529</updated>
+      <workItem from="1575009506104" duration="1192000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
