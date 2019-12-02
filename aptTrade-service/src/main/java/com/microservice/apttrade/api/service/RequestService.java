@@ -19,69 +19,33 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+@Service
 public class RequestService {
 	private static final Logger logger = LoggerFactory.getLogger(RequestService.class);
-	private static final String PAGE_SIZE = "1000";
+	private static String PAGE_SIZE = "1000";
 
 	@Value("${opendata.api.key:}")
-	private String authKey;
+	String authKey;
 
 	@Value("${opendata.api.apt.trade.uri:}")
-	public String uri;
-
-	public RequestService(){}
-	public RequestService(String authKey, String uri){
-		this.authKey = authKey;
-		this.uri = uri;
-	}
-
+	String uri;
 
 	OkHttpClient client= null;
 
-	private OkHttpClient setClient(){
-		if( client == null ){
-			client = new OkHttpClient();
-		}
-		return client = new OkHttpClient.Builder()
-				.connectTimeout(10, TimeUnit.MINUTES)
-				.writeTimeout(60, TimeUnit.SECONDS)
-				.readTimeout(60, TimeUnit.SECONDS)
-				.build();
+	public RequestService(){}
+	public RequestService(String authKey, String uri, OkHttpClient client, String pageSize){
+		this.authKey = authKey;
+		this.uri = uri;
+		this.client = client;
+		this.PAGE_SIZE = pageSize;
 	}
 
-	/**
-	 * 아파트 매매 실거래 상세 조회 API 요청
-	 * @param url 아파트매매 실거래 조회 요청 URL
-	 */
-	protected String requestGetHttp(String url){
-		setClient();
-		Response response = null;
-		String contents = "";
-		try{
-			Request request = new Request.Builder()
-					.url(url)
-					.header("Content-Type", "application/json")
-					.addHeader("ACCEPT", "application/json")
-					.build();
-			response = client.newCall(request).execute();
-
-			if( response.code() == HttpStatus.OK.value() && response.body() != null){
-				contents = response.body().string();
-			}
-		}catch (Exception e){
-			e.printStackTrace();
-		}finally {
-			if(response != null){
-				response.close();
-			}
-		}
-		return contents;
-	}
 
 	/**
 	 * 아파트 실거래가 조회 API
@@ -89,9 +53,18 @@ public class RequestService {
 	 * @param dealYm 계약 년/월
 	 * @param page 페이지
 	 */
-	protected AptTradeResponse request(String lawdCd, String dealYm, int page) {
-		AptTradeResponse response =  new AptTradeResponse();
-		String aptTradeContents = "";
+	public String request(String lawdCd, String dealYm, int page) {
+		String contents ="";
+		if( client == null ){
+			client = new OkHttpClient();
+			client = new OkHttpClient.Builder()
+					.connectTimeout(10, TimeUnit.MINUTES)
+					.writeTimeout(60, TimeUnit.SECONDS)
+					.readTimeout(60, TimeUnit.SECONDS)
+					.build();
+
+		}
+
 		try{
 			HttpUrl httpUrl = HttpUrl.parse(uri).newBuilder()
 					.addQueryParameter("auth_key",  authKey)
@@ -102,20 +75,35 @@ public class RequestService {
 
 			//실거래가 조회
 			String url = httpUrl.toString();
-			aptTradeContents  = requestGetHttp(url);
+			Request request = new Request.Builder().url(url)
+												.header("Content-Type", "application/json")
+												.addHeader("ACCEPT", "application/json")
+												.build();
+			Response response = client.newCall(request).execute();
+			if( response.code() == HttpStatus.OK.value() && response.body() != null){
+				contents  = response.body().string();
+			}
+
 		}catch (Exception e){
 			e.printStackTrace();
 		}
-		if( aptTradeContents != null ){
-			if( aptTradeContents.contains("일일 요청 횟수 초과") ){
+
+		logger.info("contentx========================="+contents);
+		return contents;
+	}
+
+	public AptTradeResponse setResponseBody(String body) {
+		AptTradeResponse aptTradeResponse =  new AptTradeResponse();
+		if( body != null ){
+			if( body.contains("일일 요청 횟수 초과") ){
 				throw new DataException.AptTransactionDataException();
 			}
 			ObjectMapper mapper = new ObjectMapper();
 			mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
-			JSONObject xmlJSONObj = XML.toJSONObject(aptTradeContents);
+			JSONObject xmlJSONObj = XML.toJSONObject(body);
 			if( xmlJSONObj.toString().equals("{}") ){
-				return response;
+				return aptTradeResponse;
 			}
 
 			String jsonToString = xmlJSONObj.toString();
@@ -128,11 +116,11 @@ public class RequestService {
 					JsonNode itemNode = jsonNodeRoot.get("response").get("body").get("items").get("item");
 
 					if(itemNode != null){
-						response = new AptTradeResponse();
-						AptTradeBodyResponse body =  mapper.readValue(bodyNode.toString(), new TypeReference<AptTradeBodyResponse>() {});
+						aptTradeResponse = new AptTradeResponse();
+						AptTradeBodyResponse bodyResponse =  mapper.readValue(bodyNode.toString(), new TypeReference<AptTradeBodyResponse>() {});
 						List<AptTradeItemsResponse> items =  mapper.readValue(itemNode.toString(), new TypeReference<ArrayList<AptTradeItemsResponse>>() {});
-						response.setBody(body);
-						response.setItems(items);
+						aptTradeResponse.setBody(bodyResponse);
+						aptTradeResponse.setItems(items);
 					}
 				}
 			}catch (Exception e){
@@ -142,7 +130,7 @@ public class RequestService {
 			throw new DataException.AptTransactionDataException();
 		}
 
-		return response;
+		return aptTradeResponse;
 	}
 
 

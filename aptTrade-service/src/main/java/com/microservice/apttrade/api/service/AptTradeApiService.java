@@ -9,10 +9,12 @@ import com.microservice.apttrade.api.dto.AptTradeResponse;
 import com.microservice.apttrade.api.dto.ItemsResponse;
 import com.microservice.apttrade.util.DataException;
 import com.microservice.apttrade.util.Paging;
+import okhttp3.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -23,11 +25,14 @@ import java.util.List;
 
 @Service
 @RefreshScope
-public class AptTradeApiService extends RequestService{
+public class AptTradeApiService {
 	private static final Logger logger = LoggerFactory.getLogger(AptTradeApiService.class);
 
 	@Autowired
 	private AddressApiService addressApiService;
+
+	@Autowired
+	private RequestService requestService;
 
 	/**
 	 * 당해 연도 및 주소 코드 별 아파트 실거래 데이터 목록 조회
@@ -89,16 +94,20 @@ public class AptTradeApiService extends RequestService{
 	 * @param dealYm 계약 년/월
 	 * @param page 페이지
 	 */
-	private List<AptTradeResponse> getAptTradeList(List<AptTradeResponse> list, String lawdCd, String dealYm, int page){
+	public List<AptTradeResponse> getAptTradeList(List<AptTradeResponse> list, String lawdCd, String dealYm, int page){
 		try{
-			AptTradeResponse response = request(lawdCd, dealYm, page );
+			AptTradeResponse aptTradeResponse = null;
+			String contents = requestService.request(lawdCd, dealYm, page );
+			if(!StringUtils.isEmpty(contents) && contents != null){
+				aptTradeResponse = requestService.setResponseBody(contents);
+			}
 
-			if(response != null && response.getItems().size() > 0){
-				list.add(response);
+			if(aptTradeResponse != null && aptTradeResponse.getItems().size() > 0){
+				list.add(aptTradeResponse);
 				//Paging paging = new Paging(한 화면에 보여질 글 수 , 페이지 분할 수 , 총 글의 갯수  , 현재 보고 있는 페이지 번호  );)
-				int numOfRows  = response.getBody().getNumOfRows();
-				int pageNo     = response.getBody().getPageNo();
-				int totalCount = response.getBody().getTotalCount();
+				int numOfRows  = aptTradeResponse.getBody().getNumOfRows();
+				int pageNo     = aptTradeResponse.getBody().getPageNo();
+				int totalCount = aptTradeResponse.getBody().getTotalCount();
 				int pageSize   = new Paging(numOfRows, totalCount ).getPageCount();
 				pageSize = (pageSize > 1) ? pageSize +1 : pageSize;
 
@@ -140,7 +149,7 @@ public class AptTradeApiService extends RequestService{
 	 * @param buldMnnm 도로명 건물 본번호 코드
 	 * @param buldSlno 도로명 건물 부번호 코드
 	 */
-	private List<ItemsResponse> filter(List<AptTradeResponse> list, List<ItemsResponse> filterItems, String rnCode, long buldMnnm, long buldSlno){
+	public List<ItemsResponse> filter(List<AptTradeResponse> list, List<ItemsResponse> filterItems, String rnCode, long buldMnnm, long buldSlno){
 		for ( AptTradeResponse rs : list){
 			for( AptTradeItemsResponse item : rs.getItems() ){
 
@@ -163,7 +172,7 @@ public class AptTradeApiService extends RequestService{
 	 * @param areaRange  전용면적 범위
 	 * @param items 조회한 실거래가 데이터
 	 */
-	private List<ItemsResponse> filterByPriceAndArea(String priceRange, String areaRange, List<ItemsResponse> items ){
+	public List<ItemsResponse> filterByPriceAndArea(String priceRange, String areaRange, List<ItemsResponse> items ){
 		List<ItemsResponse> filterItems = new ArrayList<>();
 
 		for( ItemsResponse item : items ){
