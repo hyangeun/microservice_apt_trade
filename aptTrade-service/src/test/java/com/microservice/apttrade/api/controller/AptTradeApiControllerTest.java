@@ -3,7 +3,6 @@ package com.microservice.apttrade.api.controller;
 import com.microservice.apttrade.AptTradeApplication;
 import com.microservice.apttrade.TestConfiguration;
 import com.microservice.apttrade.api.service.AptTradeApiService;
-import com.microservice.apttrade.api.service.RequestService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,10 +16,8 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -49,7 +46,7 @@ public class AptTradeApiControllerTest {
         MockitoAnnotations.initMocks(this);
         this.mockMvc = MockMvcBuilders.standaloneSetup(aptTradeApiController).build();
     }
-//
+
     @Test
     public void listByAmdCodeAndYear() throws Exception{
         String rnMgtSn = TestConfiguration.RN_MGT_SN;
