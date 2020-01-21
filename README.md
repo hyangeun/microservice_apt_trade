@@ -39,17 +39,42 @@
 2. 마이페이지에서 **나의 인증키**를 복사합니다.
   <img src="./images/opendata02.png" width="500">
 
-3. aptTrade-service/src/main/resources/application.properties 수정
+3. MsXpert에서 [주소 서비스](https://github.com/startupcloudplatform/microservice_address)와 [공시지가 서비스](https://github.com/startupcloudplatform/public-land-value)가 배포 돼있어야 합니다. 
+
+4. aptTrade-service/src/main/resources/application.properties 수정
   
    ````
    #공공데이터 포털 주소 API
    opendata.api.apt.trade.uri: http://182.252.131.40:9000/apiservice/4357
    opendata.api.key: ##여기에 키 입력
    ````
-      
-4. CF 또는 [PaaS-TA](#http://paas-ta.kr) 설치
-5.  **[CF  CLI](#https://github.com/cloudfoundry/cli/releases)** 설치 
-       
+
+5. aptTrade-service/src/main/resources/bootstrap.properties 수정
+
+    생성할 마이크로서비스에 연결할 주소 서비스의 backend  서비스 명을 입력합니다. 
+   
+   ````
+   ##주소 Microservice API URL
+   feign.post-api.name: ${FEIGN_POST_API_NAME:address-service}
+   ````
+6. aptTrade-frontend/src/main/resources/bootstrap.properties 수정
+
+   MsXpert 에서 마이크로서비스 생성 시 연결할 주소 서비스 및 공시지가 서비스 API의  URL 및 Basic Auth 정보를 입력합니다.
+   <img src="./images/img04.png" width="500">
+   
+   ````
+   ##주소 Microservice API URL
+   feign.post-api.url=${FEIGN_POST_API_URI:http://203.245.1.101/address}
+   feign.post-api.username:
+   feign.post-api.password:
+
+   ## 공시지가 Microservice API  URL
+   feign.olv-api.url: ${FEIGN_OLV_API_URI:http://203.245.1.101/plv}
+   feign.olv-api.username:
+   feign.olv-api.password:
+   hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+   ````
+     
 
 
 ## Application Deploy
