@@ -61,7 +61,8 @@
 
    MsXpert 에서 마이크로서비스 생성 시 연결할 주소 서비스 및 공시지가 서비스 API의  URL 및 Basic Auth 정보를 입력합니다.
    
-   <img src="./images/basic_auth.png" width=600">
+   
+   <img src="./images/basic_auth.png" width="600">
    
    ````
    ##주소 Microservice API URL
