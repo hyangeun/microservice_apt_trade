@@ -34,10 +34,10 @@
 
 1. [OpenDataMarket 홈페이지](#http://182.252.131.40:3000) 내 OpenData 메뉴에서 **아파트매매 실거래 상세 자료** API를 활용 신청합니다.
 
-  <img src="./images/opendata01.png" width="500">
+  <img src="./images/opendata01.png" width="600">
    
 2. 마이페이지에서 **나의 인증키**를 복사합니다.
-  <img src="./images/opendata02.png" width="500">
+  <img src="./images/opendata02.png" width="600">
 
 3. MsXpert에서 [주소 서비스](https://github.com/startupcloudplatform/microservice_address)와 [공시지가 서비스](https://github.com/startupcloudplatform/public-land-value)가 배포 돼있어야 합니다. 
 
@@ -60,6 +60,7 @@
 6. aptTrade-frontend/src/main/resources/bootstrap.properties 수정
 
    MsXpert 에서 마이크로서비스 생성 시 연결할 주소 서비스 및 공시지가 서비스 API의  URL 및 Basic Auth 정보를 입력합니다.
+   
    <img src="./images/basic_auth.png" width=600">
    
    ````
