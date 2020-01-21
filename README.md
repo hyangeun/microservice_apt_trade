@@ -60,7 +60,7 @@
 6. aptTrade-frontend/src/main/resources/bootstrap.properties 수정
 
    MsXpert 에서 마이크로서비스 생성 시 연결할 주소 서비스 및 공시지가 서비스 API의  URL 및 Basic Auth 정보를 입력합니다.
-   <img src="./images/img04.png" width="500">
+   <img src="./images/basic_auth.png" width=600">
    
    ````
    ##주소 Microservice API URL
@@ -112,6 +112,6 @@
 
 Paas-TA 계정을 가지고 MsXpert Studio에 접속하여  아래 이미지와 같이 user1-paasta 조직에 배포한 frontend, backend 앱을 마우스로 드래그하여 마이크로서비스를 설계할 수 있습니다.
 
-  <img src="./images/img02.png" width="500">
+  <img src="./images/img02.png" width="700">
 
     
