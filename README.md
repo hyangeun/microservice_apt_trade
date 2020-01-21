@@ -59,7 +59,8 @@
    ````
 6. aptTrade-frontend/src/main/resources/bootstrap.properties 수정
 
-   MsXpert 에서 마이크로서비스 생성 시 연결할 주소 서비스 및 공시지가 서비스 API의  URL 및 Basic Auth 정보를 입력합니다.
+   MsXpert 에서 마이크로서비스 생성 시 오른쪽 탭에 API에서 등록한 주소 및 공시지가 공개 API를 추가합니다. 이때, 아래 이미지와 같이 입력한 basic auth정보 및 API URL 정보를 aptTrade-frontend의 bootstrap.properties 파일에도 입력합니다.
+   URL은 해당 Msxpert의 주소 IP(http://203.245.1.101) 또는 도메인에 생성한 API의 prefix를 붙여줍니다.
    
    <img src="./images/basic_auth.png" width="400">
    
